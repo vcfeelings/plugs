@@ -1,0 +1,70 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>jQuery+CSS3遮罩弹出层动画代码 - 站长素材</title>
+
+<script type="text/javascript" src="jquery-1.7.2.min.js"></script>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<div class="checkbox">
+	<a href="javascript:0;" class="popupTrigger0">样式1</a>
+    <a href="javascript:0;" class="popupTrigger1">样式2</a>
+    <a href="javascript:0;" class="popupTrigger2">样式3</a>
+    <a href="javascript:0;" class="popupTrigger3">样式4</a>
+</div>
+<!--弹框-->
+<!-- <div class="popup">
+    <div class="popupContainer">
+        <div class="title">
+            <span></span>
+            <i class="popupClose">X</i>
+        </div>
+        <div class="content">
+        </div>
+    </div>
+</div> -->
+<script src="PopupPlug.js"></script>
+<script type="text/javascript">
+    $('.popupTrigger0').Popup({
+        WIDTH:300,
+        HEIGHT:180,
+        animate:'scaleSmall',
+        _class:'div0',
+        type:'confirmBox',
+        confirmCallback:function(){
+            console.log('第一个弹窗')
+        },
+        cancelCallback:function(){
+            $('.popup').removeClass('isVisible');
+            setTimeout(function(){
+                $('.popup').remove();
+            },300)
+        }
+    });
+    $('.popupTrigger1').Popup({
+        animate:'translate_Y',
+        _class:'div1',
+        type:'alertBox'
+    });
+    $('.popupTrigger2').Popup({
+        animate:'translateY',
+        type:'tipBox',
+        _class:'div2'
+    });
+    $('.popupTrigger3').Popup({
+        animate:'scaleBig',
+        _class:'div3'
+    });
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. 不支持IE8及以下浏览器。</p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>
+
